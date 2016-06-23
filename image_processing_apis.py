@@ -1,7 +1,12 @@
-#=================== IMAGE PROCESSING ==============================================================
+import cv2
+
+
 def are_images_same(image, reference_image):
 	return image.shape == reference_image.shape and not(np.bitwise_xor(image,reference_image).any())
-	
+
+"""
+Sorts the contours in an image according to their x, y values
+"""	
 def sort_contours(contours, method="left-to-right"):
 	reverse = False
 	i = 0
